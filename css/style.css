@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.result {
+    background-color: rgb(25, 137, 137);
+    color: aliceblue;
+    border-radius: 15px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+
+}
+
+.cal {
+    background-color: gray;
+    width: 120px;
+    border-radius: 10px;
+}
