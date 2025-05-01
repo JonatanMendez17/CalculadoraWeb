@@ -1,41 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="resources/cal.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
     <title>Calculadora</title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <H1>Calculadora Spress</H1>
-    <p>Aqui puedes realizar tus calculos de manera rapida</p>
-    <div class="cal">
-        <div class="result">resultados</div>
-        <section>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-        </section>
-        <section>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-        </section>
-        <section>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-        </section>
-        <section>
-            <button>+</button>
-            <button>-</button>
-            <button>/</button>
-            <button>*</button>
-            <button>=</button>
-        </section>
-    </div> 
+    <div class="calculadora">
+        <input type="text" id="display" class="display" disabled/>
+        <div class="botones">
+            <button data-valor="7">7</button>
+            <button data-valor="8">8</button>
+            <button data-valor="9">9</button>
+            <button data-valor="/">/</button>
 
+            <button data-valor="4">4</button>
+            <button data-valor="5">5</button>
+            <button data-valor="6">6</button>
+            <button data-valor="*">*</button>
+
+            <button data-valor="1">1</button>
+            <button data-valor="2">2</button>
+            <button data-valor="3">3</button>
+            <button data-valor="-">-</button>
+            
+            <button data-valor="0">0</button>
+            <button data-valor=".">.</button>
+            <button id="igual">=</button>
+            <button data-valor="+">+</button>
+
+            <button id="limpiar" class="limpiar">C</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

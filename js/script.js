@@ -1,4 +1,6 @@
-valor1 = "ingreso de primer numero ";
-valor2 = "ingreso de segundo numeor";
-result = valor1 + valor2; 
+const display = document.getElementById('display');
+const botones = document.querySelectorAll('[data-valor]');
+const btnIgual = document.getElementById('igual');
+const btnLimpiar = document.getElementById('limpiar');
 
+botones.forEach
