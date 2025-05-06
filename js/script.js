@@ -12,16 +12,36 @@ botones.forEach(boton => {
     });
 });
 
-// Convierte el valor del display en una operacion aritmetica
+// Realiza la operación mediante una función
 btnIgual.addEventListener('click', () => {
-    try{
-        display.value = eval(display.value);
-    } catch {
-        display.value = 'error';
+    const resultado = calcular(display.value);
+    display.value = resultado;
+
+    // Si hay error, desactiva los botones
+    if (resultado === 'error') {
+        botones.forEach(boton => boton.disabled = true);
+        btnIgual.disabled = true;
     }
 });
 
 // Limpia el contenido del display
 btnLimpiar.addEventListener('click', () => {
     display.value = '';
+
+    // Reactiva todos los botones
+    botones.forEach(boton => boton.disabled = false);
+    btnIgual.disabled = false;
 })
+
+// funcion para realizar operacion aritmetica
+function calcular(expresion) {
+    try {
+        if (/^[\d+\-*/.() ]+$/.test(expresion)) {
+            return Function('"use strict"; return (' + expresion + ')')();
+        } else {
+            return 'error';
+        }
+    } catch {
+        return 'error';
+    }
+}

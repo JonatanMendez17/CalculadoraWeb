@@ -49,6 +49,11 @@ button:hover{
     color: antiquewhite;
 }
 
+button:active {
+    transform: scale(0.95);
+    background-color: #ccc;
+}
+
 #igual {
     background-color: #4caf50;
     color: white;

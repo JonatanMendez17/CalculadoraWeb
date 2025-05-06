@@ -1,0 +1,6 @@
+- Agregar boton de borrar ultimo caracter
+- Agrenar soport de teclado
+- Historial de calculos
+- Soporte para parentesis
+- Modo oscuro alternable
+- Mejora visual como la del ejemplo
