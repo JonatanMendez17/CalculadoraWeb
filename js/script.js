@@ -45,3 +45,9 @@ function calcular(expresion) {
         return 'error';
     }
 }
+
+function borrarUltimo() {
+    const display = document.getElementById("display");
+    display.value = display.value.slice(0, -1); // Si es input
+  }
+  

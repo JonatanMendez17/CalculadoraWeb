@@ -4,3 +4,4 @@
 - Soporte para parentesis
 - Modo oscuro alternable
 - Mejora visual como la del ejemplo
+- Crear el readme
