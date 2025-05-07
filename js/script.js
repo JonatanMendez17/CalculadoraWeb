@@ -3,6 +3,7 @@ const display = document.getElementById('display');
 const botones = document.querySelectorAll('[data-valor]');
 const btnIgual = document.getElementById('igual');
 const btnLimpiar = document.getElementById('limpiar');
+document.addEventListener("keydown", manejarTecla);
 
 
 // Agrega el valor del boton presionado al contenido actual del display
@@ -49,5 +50,34 @@ function calcular(expresion) {
 function borrarUltimo() {
     const display = document.getElementById("display");
     display.value = display.value.slice(0, -1); // Si es input
+  }
+  
+function manejarTecla(evento) {
+    const tecla = evento.key;
+    const display = document.getElementById("display");
+  
+    // Si es un número o un operador válido, lo agregamos
+    if ("0123456789+-*/.".includes(tecla)) {
+      display.value += tecla;
+    }
+  
+    // Si es Enter o =, evalúa
+    if (tecla === "Enter" || tecla === "=") {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Error";
+      }
+    }
+  
+    // Si es Backspace, borra el último carácter
+    if (tecla === "Backspace") {
+      display.value = display.value.slice(0, -1);
+    }
+  
+    // Si es Escape, borra todo
+    if (tecla === "Escape") {
+      display.value = "";
+    }
   }
   

@@ -1,4 +1,3 @@
-- Agregar boton de borrar ultimo caracter
 - Agrenar soport de teclado
 - Historial de calculos
 - Soporte para parentesis
