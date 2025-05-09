@@ -1,6 +1,10 @@
-- Agrenar soport de teclado
-- Historial de calculos
-- Soporte para parentesis
 - Modo oscuro alternable
 - Mejora visual como la del ejemplo
 - Crear el readme
+
+Escucha:
+Ya se logro la mejora visual y el modo alterado del tema, esta en el proyecto calcultest
+hay que migrar esa logica a la original y conocer que hacer
+
+Luego lo demas que falta 
+
