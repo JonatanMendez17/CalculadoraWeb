@@ -1,74 +1,149 @@
+:root {
+    --bg: rgba(255, 255, 255, 0.2);
+    --text: #000;
+    --btn-bg: rgba(255, 255, 255, 0.4);
+    --btn-text: #000;
+    --result-text: #000;
+}
+
+body.dark {
+    --bg: rgba(0, 0, 0, 0.4);
+    --text: #fff;
+    --btn-bg: rgba(0, 0, 0, 0.6);
+    --btn-text: #fff;
+    --result-text: #fff;
+    background: #0d1117;
+}
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: bisque;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/recursos/fondo.png');
     height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 4, 115, 0.5), rgba(0, 0, 0, 0.5)),url('/recursos/fondo.png');
-    backface-visibility: 80%;     
+    transition: background 0.3s ease;
 }
 
-.calculadora{
-    background-color: #4b6bfb;
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+      top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+    border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+     width: 18px;
+  left: 3px;
+  bottom: 3px;
+    background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.calculadora {
+    backdrop-filter: blur(10px);
+    background: var(--bg);
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgb(0, 0, 0, 1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    width: 320px;
 }
 
-.display{
-    height: 50px;
-    font-size: 1.3rem;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: right;
-    border: 1px solid #b6d6ff;
-    border-radius: 5px;
-    color: #ffffff;
+.pantalla {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.expresion {
+  font-size: 1.2rem;
+  min-height: 24px;
+  opacity: 0.7;
+}
+
+.resultado {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--result-text);
 }
 
 .botones{
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    gap: 10px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 button{
-    padding: 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(180, 180, 180);
-    cursor:pointer;
-    transition: backgound-color 0.2s ease;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  padding: 15px;
+  cursor: pointer;
+      transition: all 0.5s ease;
+      backdrop-filter: blur(10px);
 }
 
 button:hover{
-    background-color: #00349d;
-    color: antiquewhite;
-}
-
-button:active {
-    transform: scale(0.95);
-    background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #igual {
-    background-color: #4caf50;
-    color: white;
+  background-color: #2196f3;
+  color: white;
+  grid-column: span 1;
 }
 
 #igual:hover{
-    background-color: #009d05;
+    background-color: #1769aa;
 }
 
-.limpiar{
-    grid-column: span 4;
-    background-color: #09295d;
-    color: #ffffff;
+
+
+.btn-ac {
+  background-color: #d32f2f;
+  color: white;
 }
 
-.limpiar:hover{
-    background-color: #d32f2f;
-}
+/* .invisible {
+  visibility: hidden;
+} */
