@@ -1,55 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Moderna</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div class="theme-toggle">
-        <label class="switch">
-            <input type="checkbox" id="modoToggle">
-            <span class="slider"></span>
-        </label>
-    </div>
-    <!-- Creacion base de la calculadores -->
-    <div class="calculadora">
-        <div class="pantalla">
-            <div id="expresion" class="expresion"></div>
-            <div id="resultado" class="resultado">0</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Moderna</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+
+        <div id="title">
+            <h1>Calculadora</h1>
         </div>
-        
-        <div class="botones">
-            <!-- Boton para limpiar la pantalla -->
-            <button class="btn-ac" onclick="limpiar()">Ac</button>
-            <!-- Boton para borrar ultimo caracter -->
-            <button onclick="borrarUltimo()">⌫</button>
-            <button data-valor="7">7</button>
-            <button data-valor="8">8</button>
-            <button data-valor="9">9</button>
-            <button data-valor="/">/</button>
 
-            <button data-valor="4">4</button>
-            <button data-valor="5">5</button>
-            <button data-valor="6">6</button>
-            <button data-valor="*">*</button>
+        <!-- Botón para cambiar entre modo claro/oscuro -->
+        <div class="theme-toggle">
+            <label class="switch">
+                <input type="checkbox" id="modoToggle">
+                <span class="slider"></span>
+            </label>
+            <span id="modoTexto" class="modo-texto">Modo oscuro</span>
+        </div>
 
-            <button data-valor="1">1</button>
-            <button data-valor="2">2</button>
-            <button data-valor="3">3</button>
-            <button data-valor="-">-</button>
-            <button class="invisible"></button>
+        <!-- Contenedor principal de la calculadora -->
+        <div class="calculadora">
+            <!-- Pantalla para mostrar la expresión y resultado -->
+            <div class="pantalla">
+                <div id="expresion" class="expresion"></div>
+                <div id="resultado" class="resultado">0</div>
+            </div>
 
+            <!-- Botones de la calculadora -->
+            <div class="botones">
+                <button class="btn-ac" onclick="limpiar()">Ac</button>
+                <button onclick="borrarUltimo()">⌫</button>
+                <button data-valor="(">(</button>
+                <button data-valor=")">)</button>
+                
+                <button data-valor="7">7</button>
+                <button data-valor="8">8</button>
+                <button data-valor="9">9</button>
+                <button data-valor="/">/</button>
 
-            <button data-valor="0">0</button>
-            <button data-valor=".">.</button>
-            <button id="igual">=</button>
-            <button data-valor="+">+</button>
+                <button data-valor="4">4</button>
+                <button data-valor="5">5</button>
+                <button data-valor="6">6</button>
+                <button data-valor="*">*</button>
+
+                <button data-valor="1">1</button>
+                <button data-valor="2">2</button>
+                <button data-valor="3">3</button>
+                <button data-valor="-">-</button>
+
+                <button data-valor="0">0</button>
+                <button data-valor=".">.</button>
+                <button id="igual">=</button>
+                <button data-valor="+">+</button>
+           
+            </div>
 
         </div>
-    </div>
-
-    <script src="/js/script.js"></script>
-</body>
+        <!-- Script que contiene la lógica de la calculadora -->
+        <script src="/js/script.js"></script>
+    </body>
 </html>

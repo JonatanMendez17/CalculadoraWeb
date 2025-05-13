@@ -1,88 +1,122 @@
 :root {
-    --bg: rgba(255, 255, 255, 0.2);
-    --text: #000;
-    --btn-bg: rgba(255, 255, 255, 0.4);
-    --btn-text: #000;
-    --result-text: #000;
+  --bg: rgba(255, 255, 255, 0.2);
+  --text: #000;
+  --btn-bg: rgba(255, 255, 255, 0.4);
+  --btn-text: #000;
+  --result-text: #000;
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
 body.dark {
-    --bg: rgba(0, 0, 0, 0.4);
-    --text: #fff;
-    --btn-bg: rgba(0, 0, 0, 0.6);
-    --btn-text: #fff;
-    --result-text: #fff;
-    background: #0d1117;
+  --bg: rgba(0, 0, 0, 0.4);
+  --text: #fff;
+  --btn-bg: rgba(0, 0, 0, 0.6);
+  --btn-text: #fff;
+  --result-text: #fff;
+  --shadow: 0 8px 70px 0 rgba(252, 252, 252, 0.6);
+  background-color: rgba(0, 0, 0, 0.8); 
+  background-blend-mode: overlay;
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: url('/recursos/fondo.png');
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('/recursos/fondo.png');
+  background-color: rgba(254, 254, 254, 0.409); 
+  background-blend-mode: overlay;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s ease;
 }
 
 .theme-toggle {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+  backdrop-filter: blur(10px);
+  background: var(--bg);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 180px;
+}
+
+.modo-texto {
+  color: var(--text); 
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider{
-    position: absolute;
-    cursor: pointer;
-      top: 0; left: 0;
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
   right: 0; bottom: 0;
-  background-color: #ccc;
-    border-radius: 34px;
+  background-color: #000000;
+  border-radius: 34px;
   transition: .4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-     width: 18px;
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
   left: 3px;
   bottom: 3px;
-    background-color: white;
+  background-color: white;
   border-radius: 50%;
   transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #2196f3;
+  background-color: #2196f3;
 }
 
 input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+#title {
+  backdrop-filter: blur(10px);
+  background: var(--bg);
+  color: var(--btn-text);
+  margin: 10px;
+  padding: 1px 20px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
 .calculadora {
-    backdrop-filter: blur(10px);
-    background: var(--bg);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
-    width: 320px;
+  backdrop-filter: blur(10px);
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 320px;
 }
 
 .pantalla {
@@ -114,17 +148,21 @@ input:checked + .slider:before {
 button{
   background-color: var(--btn-bg);
   color: var(--btn-text);
-  border: none;
+  border-color: #a1a1a16f;
   border-radius: 15px;
   font-size: 1.5rem;
   padding: 15px;
   cursor: pointer;
-      transition: all 0.5s ease;
-      backdrop-filter: blur(10px);
+  transition: background-color 0.5s ease, transform 0.1s ease;
+  backdrop-filter: blur(10px);
 }
 
 button:hover{
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(1.05); /* agranda un 5% */
 }
 
 #igual {
@@ -134,16 +172,14 @@ button:hover{
 }
 
 #igual:hover{
-    background-color: #1769aa;
+  background-color: #0062ff;
 }
-
-
 
 .btn-ac {
   background-color: #d32f2f;
   color: white;
 }
 
-/* .invisible {
-  visibility: hidden;
-} */
+.btn-ac:hover{
+  background-color: #ff2626;
+}
