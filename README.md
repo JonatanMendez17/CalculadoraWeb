@@ -11,7 +11,7 @@ Una calculadora web moderna con modo claro y oscuro, diseñada con HTML, CSS y J
 - Estructura modular: HTML, CSS y JS separados para fácil mantenimiento.
 
 # 🖥️ Vista previa
-![Vista previa de la calculadora](./calculadora_moderna.png)
+![Vista previa de la calculadora](./assets/calculadora_moderna.png)
 
 # 📦 Tecnologías
 - HTML5
