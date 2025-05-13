@@ -22,7 +22,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('/recursos/fondo.png');
+  background-image: url('../recursos/fondo.png');
   background-color: rgba(254, 254, 254, 0.409); 
   background-blend-mode: overlay;
   height: 100vh;
