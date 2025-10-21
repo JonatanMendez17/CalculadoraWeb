@@ -1,19 +1,15 @@
-// ============= Seleccion de elementos ====================
 const expresion = document.getElementById('expresion');
 const resultado = document.getElementById('resultado');
 const botones = document.querySelectorAll('[data-valor]');
 const btnIgual = document.getElementById('igual');
-const modoToggle = document.getElementById('modoToggle');
+const modoAlternar = document.getElementById('modoAlternar');
 const modoTexto = document.getElementById('modoTexto');
 
-
-// ================ Listeners ===============
 // Teclado
 document.addEventListener("keydown", escucharTeclado);
-
 btnIgual.addEventListener('click', calcular);
 
-// Click en botones
+// Botones
 botones.forEach(boton => {
   boton.addEventListener('click', () => {
     expresion.textContent += boton.getAttribute('data-valor');
@@ -21,10 +17,9 @@ botones.forEach(boton => {
 });
 
 // Modo oscuro
-modoToggle.addEventListener('change', modoDinamico);
+modoAlternar.addEventListener('change', modoDinamico);
 
-// =========== Funciones =============
-
+// Funciones 
 function limpiar() {
   expresion.textContent = '';
   resultado.textContent = '0';
@@ -69,12 +64,7 @@ function escucharTeclado(e){
   }
 }
 
-function modoDinamico(){
-  document.body.classList.toggle('dark');
-
-  if (document.body.classList.contains('dark')) {
-    modoTexto.textContent = 'Modo claro';
-  } else {
-    modoTexto.textContent = 'Modo oscuro';
-  }
+function modoDinamico() {
+  const oscuro = document.body.classList.toggle('dark');
+  modoTexto.textContent = oscuro ? 'Modo claro' : 'Modo oscuro';
 }

@@ -1,29 +1,26 @@
 :root {
-  --bg: rgba(255, 255, 255, 0.2);
-  --text: #000;
-  --btn-bg: rgba(255, 255, 255, 0.4);
-  --btn-text: #000;
-  --result-text: #000;
-  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+  --fondo: rgba(255, 255, 255, 0.2);
+  --texto-principal: #000;
+  --boton-fondo: rgba(255, 255, 255, 0.4);
+  --sombra: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
 body.dark {
-  --bg: rgba(0, 0, 0, 0.4);
-  --text: #fff;
-  --btn-bg: rgba(0, 0, 0, 0.6);
-  --btn-text: #fff;
-  --result-text: #fff;
-  --shadow: 0 8px 70px 0 rgba(252, 252, 252, 0.6);
-  background-color: rgba(0, 0, 0, 0.8); 
+  --fondo: rgba(0, 0, 0, 0.4);
+  --texto-principal: #fff;
+  --boton-fondo: rgba(0, 0, 0, 0.6);
+  --sombra: 0 8px 70px 0 rgba(252, 252, 252, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   background-blend-mode: overlay;
 }
 
-body{
+/* ----------- Estilos base ----------- */
+body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('../recursos/fondo.png');
-  background-color: rgba(254, 254, 254, 0.409); 
+  background-image: url('/assets/fondo.png');
+  background-color: rgba(254, 254, 254, 0.4);
   background-blend-mode: overlay;
   height: 100vh;
   display: flex;
@@ -33,97 +30,93 @@ body{
   transition: 0.8s ease;
 }
 
-.theme-toggle {
+.tarjeta {
+  backdrop-filter: blur(10px);
+  background: var(--fondo);
+  box-shadow: var(--sombra);
+  border-radius: 20px;
+}
+
+/* ----------- Cambio de tema ----------- */
+.cambio-tema {
   position: absolute;
   top: 20px;
   right: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   flex-direction: row-reverse;
-  backdrop-filter: blur(10px);
-  background: var(--bg);
   padding: 10px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
   width: 180px;
 }
 
-.modo-texto {
-  color: var(--text); 
+.texto-modo {
+  color: var(--texto-principal);
   font-size: 0.9rem;
   font-weight: bold;
 }
 
-.switch {
+/* ----------- Interruptor ----------- */
+.interruptor {
   position: relative;
-  display: inline-block;
   width: 50px;
   height: 24px;
 }
 
-.switch input {
+.interruptor input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.slider{
+.deslizador {
   position: absolute;
-  cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background-color: #000000;
+  inset: 0;
+  background-color: #000;
   border-radius: 34px;
-  transition: .4s;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
-.slider:before {
-  position: absolute;
+.deslizador::before {
   content: "";
+  position: absolute;
   height: 18px;
   width: 18px;
   left: 3px;
   bottom: 3px;
   background-color: white;
   border-radius: 50%;
-  transition: .4s;
+  transition: all 0.4s ease;
 }
 
-input:checked + .slider {
+input:checked + .deslizador {
   background-color: #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked + .deslizador::before {
   transform: translateX(26px);
 }
 
-#title {
-  backdrop-filter: blur(10px);
-  background: var(--bg);
-  color: var(--btn-text);
-  margin: 10px;
-  padding: 1px 20px;
-  border-radius: 20px;
+/* ----------- Título y calculadora ----------- */
+#titulo, .calculadora {
   width: 320px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-.calculadora {
-  backdrop-filter: blur(10px);
-  background: var(--bg);
   padding: 20px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  width: 320px;
+  text-align: center;
+  margin: 10px;
 }
 
+#titulo {
+  color: var(--texto-principal);
+  padding: 5px 20px;
+}
+
+/* ----------- Pantalla ----------- */
 .pantalla {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  color: var(--text);
+  color: var(--texto-principal);
   margin-bottom: 20px;
 }
 
@@ -136,50 +129,135 @@ input:checked + .slider:before {
 .resultado {
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--result-text);
 }
 
-.botones{
+/* ----------- Botones ----------- */
+.botones {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-button{
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  border-color: #a1a1a16f;
+button {
+  background-color: var(--boton-fondo);
+  color: var(--texto-principal);
+  border: 1px solid #a1a1a16f;
   border-radius: 15px;
   font-size: 1.5rem;
   padding: 15px;
   cursor: pointer;
-  transition: background-color 0.5s ease, transform 0.1s ease;
+  transition: all 0.4s ease;
   backdrop-filter: blur(10px);
 }
 
-button:hover{
+button:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  transform: scale(1.05); /* agranda un 5% */
+  transform: scale(1.05);
 }
 
 #igual {
   background-color: #2196f3;
-  color: white;
-  grid-column: span 1;
+  color: #fff;
 }
 
-#igual:hover{
+#igual:hover {
   background-color: #0062ff;
 }
 
 .btn-ac {
   background-color: #d32f2f;
-  color: white;
+  color: #fff;
 }
 
-.btn-ac:hover{
+.btn-ac:hover {
   background-color: #ff2626;
+}
+
+/* --- pantallas medianas --- */
+@media (max-width: 768px) {
+  #titulo {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+
+  .calculadora {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .pantalla .expresion {
+    font-size: 1rem;
+  }
+
+  .pantalla .resultado {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+    padding: 12px;
+  }
+
+  .cambio-tema {
+    width: 150px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .texto-modo {
+    font-size: 0.85rem;
+  }
+}
+
+/* --- pantallas pequeñas --- */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  #titulo {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .calculadora {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .pantalla {
+    margin-bottom: 10px;
+  }
+
+  .pantalla .expresion {
+    font-size: 0.9rem;
+  }
+
+  .pantalla .resultado {
+    font-size: 1.6rem;
+  }
+
+  .botones {
+    gap: 8px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .cambio-tema {
+    width: 130px;
+    padding: 8px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .texto-modo {
+    font-size: 0.8rem;
+  }
 }
