@@ -106,12 +106,12 @@ input:checked + .deslizador::before {
 
 /* ----------- Título y calculadora ----------- */
 #titulo, .calculadora {
-  width: min(90vw, 400px);
-  max-width: 400px;
+  width: min(85vw, 350px);
+  max-width: 350px;
   min-width: 280px;
-  padding: clamp(15px, 4vw, 25px);
+  padding: clamp(12px, 3vw, 20px);
   text-align: center;
-  margin: 10px auto;
+  margin: 8px auto;
 }
 
 #titulo {
@@ -125,42 +125,42 @@ input:checked + .deslizador::before {
   flex-direction: column;
   align-items: flex-end;
   color: var(--texto-principal);
-  margin-bottom: clamp(15px, 4vw, 25px);
-  padding: clamp(10px, 3vw, 20px);
+  margin-bottom: clamp(12px, 3vw, 18px);
+  padding: clamp(8px, 2vw, 15px);
   background: rgba(255, 255, 255, 0.1);
-  border-radius: clamp(10px, 2vw, 15px);
-  min-height: clamp(60px, 15vw, 100px);
+  border-radius: clamp(8px, 1.5vw, 12px);
+  min-height: clamp(50px, 10vw, 70px);
 }
 
 .expresion {
-  font-size: clamp(1rem, 3vw, 1.4rem);
-  min-height: clamp(20px, 5vw, 30px);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  min-height: clamp(18px, 4vw, 25px);
   opacity: 0.7;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .resultado {
-  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: bold;
   word-break: break-all;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 /* ----------- Botones ----------- */
 .botones {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(8px, 2vw, 15px);
+  gap: clamp(6px, 1.5vw, 12px);
 }
 
 button {
   background-color: var(--boton-fondo);
   color: var(--texto-principal);
   border: 1px solid #a1a1a16f;
-  border-radius: clamp(10px, 2vw, 15px);
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  padding: clamp(12px, 3vw, 20px);
-  min-height: clamp(45px, 12vw, 70px);
+  border-radius: clamp(8px, 1.5vw, 12px);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  padding: clamp(8px, 2vw, 15px);
+  min-height: clamp(35px, 8vw, 50px);
   cursor: pointer;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
@@ -198,7 +198,40 @@ button:active {
   background-color: #ff2626;
 }
 
-/* --- pantallas medianas --- */
+/* --- Notebooks y pantallas medianas --- */
+@media (min-width: 768px) and (max-width: 1366px) {
+  #titulo, .calculadora {
+    width: min(80vw, 320px);
+    max-width: 320px;
+    padding: 15px;
+  }
+  
+  .pantalla {
+    min-height: 60px;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .pantalla .resultado {
+    font-size: 1.8rem;
+  }
+  
+  .pantalla .expresion {
+    font-size: 1rem;
+  }
+  
+  button {
+    min-height: 40px;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  
+  .botones {
+    gap: 8px;
+  }
+}
+
+/* --- pantallas medianas (móviles) --- */
 @media (max-width: 768px) {
   body {
     padding: clamp(5px, 2vw, 15px);
