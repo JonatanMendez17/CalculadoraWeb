@@ -1,7 +1,15 @@
 # 🧮 Calculadora Moderna
-Una calculadora web moderna con modo claro y oscuro, diseñada con HTML, CSS y JavaScript.
+Una calculadora web moderna con un diseño responsive y funcionalidad completa. Combina una interfaz visual atractiva, con un elegante efecto glassmorphism, y una experiencia de usuario fluida y accesible desde cualquier dispositivo.
 
-# 🚀 Características
+✅ Operaciones matemáticas básicas (suma, resta, multiplicación, división)
+✅ Soporte para paréntesis
+✅ Modo oscuro/claro con toggle
+✅ Diseño responsive para todos los dispositivos
+✅ Compatibilidad con teclado físico
+✅ Interfaz visual atractiva con efectos glassmorphism
+
+
+# Características
 - Operaciones básicas: suma, resta, multiplicación y división.
 - Modo claro/oscuro con cambio dinámico.
 - Soporte para teclado: podés usar tanto clic como teclado físico.
@@ -10,10 +18,12 @@ Una calculadora web moderna con modo claro y oscuro, diseñada con HTML, CSS y J
 - Botón borrar y función de "AC" para limpiar la pantalla.
 - Estructura modular: HTML, CSS y JS separados para fácil mantenimiento.
 
-# 🖥️ Vista previa
+# 📦 Tecnologías
+- HTML5 - Estructura semántica
+- CSS3 - Estilos con variables CSS y efectos modernos
+- JavaScript - Lógica de la calculadora
+- Diseño Responsive - Media queries para múltiples dispositivos
+
+# Vista previa
 ![Vista previa de la calculadora](./assets/calculadora_moderna.png)
 
-# 📦 Tecnologías
-- HTML5
-- CSS3 (variables, grid, efectos)
-- JavaScript puro
