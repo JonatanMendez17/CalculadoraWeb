@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('/imag/fondo.png');
+  background-image: url('imag/fondo.png');
   background-color: rgba(254, 254, 254, 0.4);
   background-blend-mode: overlay;
   height: 100vh;
@@ -290,3 +290,4 @@ button:active {
     min-height: clamp(50px, 10vw, 70px);
   }
 }
+
