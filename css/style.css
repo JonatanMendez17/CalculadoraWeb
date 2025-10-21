@@ -28,6 +28,12 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.8s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .tarjeta {
@@ -148,6 +154,9 @@ button {
   cursor: pointer;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  outline: none;
 }
 
 button:hover {
@@ -178,37 +187,59 @@ button:active {
 
 /* --- pantallas medianas --- */
 @media (max-width: 768px) {
+  body {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
   #titulo {
-    width: 80%;
-    font-size: 1.2rem;
+    width: 90%;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
   }
 
   .calculadora {
-    width: 80%;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  .pantalla {
+    margin-bottom: 25px;
     padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
   }
 
   .pantalla .expresion {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
   }
 
   .pantalla .resultado {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    word-break: break-all;
+  }
+
+  .botones {
+    gap: 12px;
   }
 
   button {
-    font-size: 1.3rem;
-    padding: 12px;
+    font-size: 1.4rem;
+    padding: 18px 12px;
+    min-height: 60px;
   }
 
   .cambio-tema {
-    width: 150px;
+    width: 160px;
     top: 15px;
     right: 15px;
+    padding: 12px;
   }
 
   .texto-modo {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -216,48 +247,147 @@ button:active {
 @media (max-width: 480px) {
   body {
     height: auto;
-    padding: 20px;
+    padding: 5px;
+    min-height: 100vh;
   }
 
   #titulo {
-    width: 100%;
-    font-size: 1.1rem;
+    width: 90%;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding: 8px 15px;
   }
 
   .calculadora {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    max-width: 350px;
+    padding: 15px;
+    margin: 0 auto;
   }
 
   .pantalla {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    min-height: 80px;
   }
 
   .pantalla .expresion {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    min-height: 20px;
+  }
+
+  .pantalla .resultado {
+    font-size: 1.8rem;
+    word-break: break-all;
+    line-height: 1.2;
+  }
+
+  .botones {
+    gap: 10px;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 15px 8px;
+    min-height: 55px;
+    border-radius: 12px;
+  }
+
+  .cambio-tema {
+    width: 140px;
+    padding: 10px;
+    top: 10px;
+    right: 10px;
+    flex-direction: row;
+  }
+
+  .texto-modo {
+    font-size: 0.85rem;
+  }
+
+  .interruptor {
+    width: 45px;
+    height: 22px;
+  }
+
+  .deslizador::before {
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  input:checked + .deslizador::before {
+    transform: translateX(23px);
+  }
+}
+
+/* --- pantallas muy pequeñas --- */
+@media (max-width: 360px) {
+  .calculadora {
+    width: 98%;
+    max-width: 320px;
+    padding: 12px;
+  }
+
+  .pantalla {
+    padding: 10px;
+    min-height: 70px;
   }
 
   .pantalla .resultado {
     font-size: 1.6rem;
   }
 
+  button {
+    font-size: 1.1rem;
+    padding: 12px 6px;
+    min-height: 50px;
+  }
+
+  .botones {
+    gap: 8px;
+  }
+}
+
+/* --- modo vertical en móviles --- */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    height: auto;
+    padding: 5px;
+  }
+
+  .calculadora {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+  }
+
+  .pantalla {
+    margin-bottom: 15px;
+    padding: 10px;
+    min-height: 60px;
+  }
+
+  .pantalla .resultado {
+    font-size: 1.8rem;
+  }
+
+  button {
+    padding: 10px 8px;
+    min-height: 45px;
+    font-size: 1.2rem;
+  }
+
   .botones {
     gap: 8px;
   }
 
-  button {
-    font-size: 1.1rem;
-    padding: 10px;
-  }
-
-  .cambio-tema {
-    width: 130px;
-    padding: 8px;
-    top: 10px;
-    right: 10px;
-  }
-
-  .texto-modo {
-    font-size: 0.8rem;
+  #titulo {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
   }
 }
