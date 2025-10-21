@@ -1,4 +1,4 @@
-# 🧮 Calculadora Moderna
+# 🧮 Calculadora Web
 Una calculadora web moderna con un diseño responsive y funcionalidad completa. Combina una interfaz visual atractiva, con un elegante efecto glassmorphism, y una experiencia de usuario fluida y accesible desde cualquier dispositivo.
 
 ✅ Operaciones matemáticas básicas (suma, resta, multiplicación, división)
@@ -7,7 +7,6 @@ Una calculadora web moderna con un diseño responsive y funcionalidad completa. 
 ✅ Diseño responsive para todos los dispositivos
 ✅ Compatibilidad con teclado físico
 ✅ Interfaz visual atractiva con efectos glassmorphism
-
 
 # Características
 - Operaciones básicas: suma, resta, multiplicación y división.
@@ -25,5 +24,6 @@ Una calculadora web moderna con un diseño responsive y funcionalidad completa. 
 - Diseño Responsive - Media queries para múltiples dispositivos
 
 # Vista previa
-![Vista previa de la calculadora](./assets/calculadora_moderna.png)
+<img width="627" height="726" alt="image" src="https://github.com/user-attachments/assets/56d3846d-4764-45ec-98a8-7edcfe2900e0" />
+
 
