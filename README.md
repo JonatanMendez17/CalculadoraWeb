@@ -17,7 +17,7 @@ Una calculadora web moderna con un diseño responsive y funcionalidad completa. 
 - Botón borrar y función de "AC" para limpiar la pantalla.
 - Estructura modular: HTML, CSS y JS separados para fácil mantenimiento.
 
-# 📦 Tecnologías
+# Tecnologías
 - HTML5 - Estructura semántica
 - CSS3 - Estilos con variables CSS y efectos modernos
 - JavaScript - Lógica de la calculadora
